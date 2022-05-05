@@ -1,0 +1,604 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+#design {
+  font-family: monospace;
+  background-image: url("../img/bcp.jpg");
+  background-repeat: no-repeat;
+  /* overflow: scroll; */
+  background-size: cover;
+}
+
+.page {
+  width: 380px;
+  height: 580px;
+  margin: 2% auto;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px #333;
+}
+.header {
+  text-align: center;
+  padding-top: 35px;
+}
+
+.header p {
+  color: black;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  color: black;
+  font-size: 25px;
+  font-weight: lighter;
+  margin-bottom: 24px;
+  font-family: sans-serif;
+  letter-spacing: 3px;
+}
+
+.header h2 {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  margin-left: 35px;
+  text-align: left;
+  font-family: sans-serif;
+  letter-spacing: 3px;
+}
+
+.bcplogo {
+  width: 80px;
+  height: 90px;
+}
+
+.wholepage {
+  text-align: center;
+}
+
+.wholepage input,
+button {
+  width: 300px;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 15px;
+  border-radius: 7px;
+}
+
+.wholepage button {
+  padding-left: 0;
+  background-color: #83acf1;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.wholepage button:hover {
+  box-shadow: 2px 2px 5px #555;
+  background-color: #7799d4;
+}
+
+button#btn {
+  background-color: #a52a2a;
+  color: white;
+}
+button#btn:hover {
+  background-color: #e55451;
+}
+.wholepage input:hover {
+  box-shadow: 2px 2px 5px #555;
+  background-color: #ddd;
+}
+
+.wholepage span {
+  position: relative;
+}
+
+.forgot {
+  font-family: sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.registrationpage {
+  width: 600px;
+  height: 610px;
+  margin: 2% auto;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px #333;
+}
+
+.registrationpage input {
+  width: 250px;
+  height: 38px;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  border-radius: 7px;
+}
+
+.registrationpage button {
+  padding-left: 0;
+  background-color: #a52a2a;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  margin-top: 15px;
+}
+
+.registrationpage button:hover {
+  box-shadow: 2px 2px 5px #555;
+  background-color: #e55451;
+}
+.registrationpage input:hover {
+  box-shadow: 2px 2px 5px #555;
+  background-color: #ddd;
+}
+
+.frontpage {
+  width: 560px;
+  height: 450px;
+  margin: 8% auto;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px #333;
+}
+
+.frontpage button {
+  padding-left: 0;
+  background-color: #a52a2a;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  margin-top: 15px;
+}
+
+.frontpage button:hover {
+  box-shadow: 2px 2px 5px #555;
+  background-color: #e55451;
+}
+
+.sidebar {
+  position: fixed; /*means it always stays in the same place even if the page is scrolled*/
+  height: 100%;
+  width: 240px; /*width for left side bar*/
+  background: #38acec;
+}
+.sidebar .logo-details {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #357ec7;
+}
+.sidebar .logo-details .bcplogo {
+  /* properties for bcp logo*/
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  min-width: 50px;
+  text-align: center;
+}
+.sidebar .logo-details .logo_name {
+  /* properties of BCP grading system text */
+  margin-top: 10px;
+  font-size: 19px;
+  font-weight: 500;
+  color: white;
+}
+.sidebar .nav-links {
+  margin-top: 16px;
+}
+.sidebar .nav-links li {
+  /* properties for navigation list*/
+  height: 50px;
+  width: 100%;
+  list-style: none;
+}
+.sidebar .nav-links li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li a:hover {
+  background: #82caff;
+}
+.sidebar .nav-links li a i {
+  min-width: 60px;
+  text-align: center;
+  color: black;
+  font-size: 18px;
+}
+.sidebar .nav-links li a .link_name {
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* Homepage CSS*/
+.home-section {
+  background: #f5f5f5;
+  position: relative;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+}
+
+.home-section nav {
+  height: 80px;
+  background: #fff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* no need mag div para mapaghiwalay yung text, need lang ganto property*/
+}
+
+.home-section nav .sidebar-button {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.home-section nav .sidebar-button i {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+.home-section nav .search-box {
+  height: 50px;
+  width: 550px;
+  margin: 0 20px;
+  position: relative;
+}
+
+nav .search-box input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-size: 17px;
+  color: black;
+  background: #f5f6fa;
+  border: 2px solid #efeef1;
+  outline: none;
+}
+
+nav .search-box .bx-search-alt-2 {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+  width: 40px;
+  background: #38acec;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.home-section nav .profile-details {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  min-width: 190px;
+  background: #f5f6fa;
+  border: 2px solid #efeef1;
+  border-radius: 6px;
+  padding: 0 15px 0 2px;
+}
+
+/* properties for My profile*/
+
+nav .profile-details img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover; /*resized to fit its container*/
+  border-radius: 6px;
+}
+
+nav .profile-details .admin-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+nav .profile-details i {
+  color: #333;
+  font-size: 25px;
+}
+/* 2nd css for admin page */
+
+.sidebar {
+  position: fixed; /*means it always stays in the same place even if the page is scrolled*/
+  height: 100%;
+  width: 240px; /*width for left side bar*/
+  background: #38acec;
+}
+.sidebar .logo-details {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #357ec7;
+}
+.sidebar .logo-details .bcplogo {
+  /* properties for bcp logo*/
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  min-width: 50px;
+  text-align: center;
+}
+.sidebar .logo-details .logo_name {
+  /* properties of BCP grading system text */
+  margin-top: 10px;
+  font-size: 19px;
+  font-weight: 500;
+  color: white;
+}
+.sidebar .nav-links {
+  margin-top: 16px;
+}
+.sidebar .nav-links li {
+  /* properties for navigation list*/
+  height: 50px;
+  width: 100%;
+  list-style: none;
+}
+.sidebar .nav-links li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li a:hover {
+  background: #82caff;
+}
+.sidebar .nav-links li a i {
+  min-width: 60px;
+  text-align: center;
+  color: black;
+  font-size: 18px;
+}
+.sidebar .nav-links li a .link_name {
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* Homepage CSS*/
+.home-section {
+  background: #f5f5f5;
+  position: relative;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+}
+
+.home-section nav {
+  width: calc(100% - 5px);
+  height: 80px;
+  background: #fff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* no need mag div para mapaghiwalay yung text, need lang ganto property*/
+}
+
+.home-section nav .sidebar-button {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.home-section nav .sidebar-button i {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+.home-section nav .search-box {
+  height: 50px;
+  width: 550px;
+  margin: 0 20px;
+  position: relative;
+}
+
+nav .search-box input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-size: 17px;
+  color: black;
+  background: #f5f6fa;
+  border: 2px solid #efeef1;
+  outline: none;
+}
+
+nav .search-box .bx-search-alt-2 {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+  width: 40px;
+  background: #38acec;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.home-section nav .profile-details {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  min-width: 190px;
+  background: #f5f6fa;
+  border: 2px solid #efeef1;
+  border-radius: 6px;
+  padding: 0 15px 0 2px;
+}
+
+/* properties for My profile*/
+
+nav .profile-details img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover; /*resized to fit its container*/
+  border-radius: 6px;
+}
+
+nav .profile-details .admin-name a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 10px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+nav .profile-details i {
+  color: #333;
+  font-size: 25px;
+}
+
+.home-section .home-content {
+  position: relative;
+  padding-top: 33px;
+}
+
+.home-content .overview-boxes {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.home-content .overview-boxes .box {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 14px;
+  background: #79baec;
+  border-radius: 12px;
+}
+
+.home-content .overview-boxes .box:hover {
+  background: #addfff;
+}
+
+.home-content .overview-boxes .boxe {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 14px;
+  background: #79baec;
+  border-radius: 12px;
+}
+
+.home-content .overview-boxes .boxe:hover {
+  background: #addfff;
+}
+
+.home-content .overview-boxes .box_topic a {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  text-align: center;
+}
+
+.overview-boxes .indicator {
+  display: flex;
+  align-items: center;
+}
+
+.overview-boxes .indicator img {
+  height: 150px;
+  width: 170px;
+  margin-right: 5px;
+}
+
+.overview-boxes .box .posts {
+  height: 50px;
+  line-height: 50px;
+
+  border-radius: 12px;
+}
+
+.overview-boxes .boxe .posts {
+  height: 50px;
+  line-height: 50px;
+
+  border-radius: 12px;
+}
+
+.overview-boxes .highlights img {
+  height: 120px;
+  width: 170px;
+  margin-right: 5px;
+  display: flex;
+}
+
+.overview-boxes .diff-user img {
+  height: 120px;
+  width: 170px;
+  margin-right: 5px;
+}
+
+.overview-boxes .grade-report img {
+  height: 120px;
+  width: 150px;
+  margin-right: 5px;
+}
+
+@media (max-width: 1216px) {
+  .home-section {
+    width: calc(100% - 7px);
+  }
+}

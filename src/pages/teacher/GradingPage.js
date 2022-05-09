@@ -26,7 +26,7 @@ const columns = [
     },
 ];
 
-const data = [
+let data = [
     {
         id: 1,
         title: 'Beetlejuice',
@@ -47,9 +47,9 @@ class GradingPage extends Component{
 
     constructor(props){
         super(props);
-        this.state = {
-
-        }
+        this.setState(prevState => ({
+            data: props.studentGrade
+        }))
     }
 
     render(){
@@ -129,8 +129,6 @@ class GradingPage extends Component{
                         </Col>
                     </Row>
                 </Container>
-               
-                
             </div>
         );
     }

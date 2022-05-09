@@ -14,9 +14,16 @@ class PortalTemplate extends Component{
   }
 
   componentDidMount(){
-    fetch('https://cors-anywhere.herokuapp.com/https://localhost:8080/api/grading/load-student-grade-details?studentId=0')
+    fetch('http://localhost:8080/api/grading/load-student-grade-details?studentId=0')
       .then(response => response.json())
-      .then(data => console.log(data));
+      .then(data => {
+        this.setState(prevState => ({
+          studentGrade:{
+            ...prevState.Metadata,
+            [data]:data
+          }
+        }))
+      });
   }
   
   handlerToggle(){
@@ -68,7 +75,7 @@ class PortalTemplate extends Component{
                 </nav>
                 {/* <!-- Page content--> */}
                 <div className="container-fluid">
-                    <GradingPage></GradingPage>
+                    <GradingPage props={this.state.studentGrade}></GradingPage>
                 </div>
             </div>
         </div>

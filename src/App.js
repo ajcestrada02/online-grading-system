@@ -1,12 +1,11 @@
 import React,{useState,useEffect, Component} from 'react';
 import logo from './logo.svg';
-import './App.css';
 import { BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
 import Landing from './pages/landing/Landing';
 import Admin from './pages/admin/Admin';
 import Login from './pages/login/Login';
 import Registration from './pages/registration/Registration';
-
+import PortalTemplate from './pages/components/PortalTemplate';
 class App extends Component {
   // TODO: Need to have a login function
   // const [token, setToken] = useState();
@@ -25,10 +24,12 @@ class App extends Component {
     return(
       <Router>
           <Routes>
-            <Route exact path="/" element={<Landing/>}/>
+            {/* <Route exact path="/" element={<Landing/>}/> */}
+            <Route exact path="/" element={<PortalTemplate/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/registration" element={<Registration/>}/>
             <Route path="/admin" element={<Admin/>}/>
+
           </Routes>
       </Router>
     )

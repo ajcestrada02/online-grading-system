@@ -1,6 +1,5 @@
 import '../../resources/css/Design.css';
 import logo from '../../resources/img/logo.png'; 
-import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 class Login extends Component {

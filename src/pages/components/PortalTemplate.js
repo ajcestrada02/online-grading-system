@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { NavLink} from 'react-router-dom';
-import {Nav} from 'react-bootstrap';
+import {Dropdown, Nav} from 'react-bootstrap';
 import './PortalTemplate.css';
 import GradingPage from '../teacher/GradingPage';
 
@@ -13,6 +13,12 @@ class PortalTemplate extends Component{
     }
   }
 
+  componentDidMount(){
+    fetch('https://cors-anywhere.herokuapp.com/https://localhost:8080/api/grading/load-student-grade-details?studentId=0')
+      .then(response => response.json())
+      .then(data => console.log(data));
+  }
+  
   handlerToggle(){
     document.body.classList.toggle('sb-sidenav-toggled');
     localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
@@ -31,6 +37,7 @@ class PortalTemplate extends Component{
                     <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
                     <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
                     <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                    <NavLink className="list-group-item list-group-item-action list-group-item-light p-3" to="/login">Logout</NavLink>
                 </div>
             </div>
             {/* <!-- Page content wrapper--> */}
@@ -45,6 +52,8 @@ class PortalTemplate extends Component{
                                 <li className="nav-item active"><a className="nav-link" href="#!">Home</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#!">Link</a></li>
                                 <li className="nav-item dropdown">
+                                  {/* <Dropdown>
+                                  </Dropdown> */}
                                     <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
                                     <div className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a className="dropdown-item" href="#!">Action</a>

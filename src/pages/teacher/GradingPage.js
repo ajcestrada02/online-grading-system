@@ -26,32 +26,52 @@ const columns = [
     },
 ];
 
-let data = [
-    {
-        id: 1,
-        title: 'Beetlejuice',
-        description: '1988',
-        grade: '10',
-        date: '1988',
-    },
-    {
-        id: 2,
-        title: 'Ghostbusters',
-        description: '1984',
-        grade: '10',
-        date: '1988',
-    },
-]
-
 class GradingPage extends Component{
 
     constructor(props){
         super(props);
-        this.setState(prevState => ({
-            data: props.studentGrade
-        }))
+        this.state = {
+            studentGrade:[],
+            data: [],
+            categories: []
+        }
     }
 
+    componentDidMount(){
+        this.fetchStudentGrades()
+        this.fetchCategories()
+        
+    }
+
+    fetchStudentGrades(){
+        fetch('http://localhost:8080/api/grading/student-grade-details?studentId=0')
+        .then(response => response.json())
+        .then(student => {
+            student.map(element => {
+                this.setState(prevState => ({
+                    data:[...prevState.data, {
+                        id: element.id,
+                        title: 'Ghostbusters',
+                        description: element.description,
+                        grade: element.studentDetails.grade,
+                        date: element.dateOfactivity,
+                    }]
+                }))
+            });
+      });
+    }
+
+    fetchCategories(){
+        fetch('http://localhost:8080/api/grading/categories')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({categories: data});
+                console.log(this.state.categories)
+            })
+    }
+    componentWillUnmount(){
+
+    }
     render(){
         return(
             <div>
@@ -64,7 +84,10 @@ class GradingPage extends Component{
                                         <Form.Label>Category</Form.Label>
                                         <Form.Select aria-label="Default select example">
                                             <option>Category</option>
-                                            <option value="1">One</option>
+                                            {this.state.categories.map(category => {
+                                                <option value="1">{category.name}</option>
+                                            })}
+                                            
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
                                         </Form.Select>
@@ -116,7 +139,7 @@ class GradingPage extends Component{
                                 <Col>
                                     <DataTable
                                         columns={columns}
-                                        data={data}
+                                        data={this.state.data}
                                     />
                                 </Col>
                             </Row>

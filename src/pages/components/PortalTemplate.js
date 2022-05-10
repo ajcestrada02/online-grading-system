@@ -12,20 +12,6 @@ class PortalTemplate extends Component{
       toggled:true
     }
   }
-
-  componentDidMount(){
-    fetch('http://localhost:8080/api/grading/load-student-grade-details?studentId=0')
-      .then(response => response.json())
-      .then(data => {
-        this.setState(prevState => ({
-          studentGrade:{
-            ...prevState.Metadata,
-            [data]:data
-          }
-        }))
-      });
-  }
-  
   handlerToggle(){
     document.body.classList.toggle('sb-sidenav-toggled');
     localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
@@ -75,7 +61,7 @@ class PortalTemplate extends Component{
                 </nav>
                 {/* <!-- Page content--> */}
                 <div className="container-fluid">
-                    <GradingPage props={this.state.studentGrade}></GradingPage>
+                    <GradingPage props={this.props}/>
                 </div>
             </div>
         </div>
